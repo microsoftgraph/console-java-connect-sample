@@ -1,0 +1,127 @@
+Welcome to the Java Console Connect Sample!
+=== Microsoft Azure Active Directory's OAuth Workflow ===
+
+Fetching the Authorization URL...
+Got the Authorization URL!
+And paste the authorization code here
+
+Trading the Request Token for an Access Token...
+Got the Access Token!
+(if you're curious the raw answer looks like this: {"token_type":"Bearer","scope":"Files.ReadWrite Mail.ReadWrite Mail.Send openid User.Read","expires_in":"3599","ext_expires_in":"0","expires_on":"1520031106","not_before":"1520027206","resource":"https://graph.microsoft.com","access_token":"eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFCSGg0a21TX2FLVDVYcmp6eFJBdEh6RGJ5eFk1SGRTb19XMnlsNGptUHluRHZFdFRQSWpzMFRQV3hUN3hQT3lNMjhmbVFfdndEc2lEcVprMTV5NmlIUHJWZ0hTTGU3MFJTMUY2OTd4ODUweENBQSIsImFsZyI6IlJTMjU2IiwieDV0IjoiU1NRZGhJMWNLdmhRRURTSnhFMmdHWXM0MFEwIiwia2lkIjoiU1NRZGhJMWNLdmhRRURTSnhFMmdHWXM0MFEwIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9hY2ViZjgzMS1kZTkyLTQ5YTMtOWIyNC05ZDE0NTgyYTBiM2UvIiwiaWF0IjoxNTIwMDI3MjA2LCJuYmYiOjE1MjAwMjcyMDYsImV4cCI6MTUyMDAzMTEwNiwiYWNyIjoiMSIsImFpbyI6IlkyTmdZSmlhdmpBOUpzUDN6OHltUWdkeE5vbUpqWFBGYkJTNWQ1OSt1L0hidWwxVlpyY0EiLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6IkphdmEgQ29ubmVjdCBTYW1wbGUgSUkiLCJhcHBpZCI6IjJjY2M5NDI5LThmZDUtNGRhZi05Mjc1LTRlZjYyNWM5ODliNyIsImFwcGlkYWNyIjoiMCIsImZhbWlseV9uYW1lIjoiQXVzdGluIiwiZ2l2ZW5fbmFtZSI6IkpvaG4iLCJpcGFkZHIiOiIxNjcuMjIwLjEuMTU0IiwibmFtZSI6IkpvaG4gQXVzdGluIiwib2lkIjoiMTBlMTg4NGMtNzM1Mi00ZGVhLWEyYzAtNGRlNDg0MDIyZWFlIiwicGxhdGYiOiIzIiwicHVpZCI6IjEwMDM3RkZFODVCREE5NkIiLCJzY3AiOiJGaWxlcy5SZWFkV3JpdGUgTWFpbC5SZWFkV3JpdGUgTWFpbC5TZW5kIG9wZW5pZCBVc2VyLlJlYWQiLCJzaWduaW5fc3RhdGUiOlsia21zaSJdLCJzdWIiOiIxTFBaZW9RLXl1bXFUaTVJUTVBSjFweVFiZnB4MnFnaWktT3dCeGFXZFc4IiwidGlkIjoiYWNlYmY4MzEtZGU5Mi00OWEzLTliMjQtOWQxNDU4MmEwYjNlIiwidW5pcXVlX25hbWUiOiJKb2huQXVzdGluQE9mZmljZVNhbmRib3gzNjUub25taWNyb3NvZnQuY29tIiwidXBuIjoiSm9obkF1c3RpbkBPZmZpY2VTYW5kYm94MzY1Lm9ubWljcm9zb2Z0LmNvbSIsInV0aSI6InQ5UkxQV0hKZkVtMmo5WEd6aFVCQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjYyZTkwMzk0LTY5ZjUtNDIzNy05MTkwLTAxMjE3NzE0NWUxMCJdfQ.iqgumDZkjnUmXf2_wKJvHkqN7DYuMcmdd5mHgHXNubLx8ms_KsWzYrjwR6NyhZFKioYCDZCZsY28Gpy80r_1HAvZy1rsGGd-9VlfwS-jnNSZ7VrrwL7eHXUEJG5AcSNH3KKgcGcZqVZoQa-uiP2NJwpnQavbm-2nM_2GjpH-8Sus3GhXanzylXVu57SK5MbCMHSikJii8aSZOYQyyVFoe602aFWQh61zEWLXUD1CJYTADiMMHmYywDvUYGWnRVzFEg9KcUanglt0i40-6egCeVViCJrTJ5BNLg4y0QyqAz_tuH7fSxtcXDsQLZB3csUouJrry02vF6hJLhdCBh0ESg","refresh_token":"AQABAAAAAABHh4kmS_aKT5XrjzxRAtHzomfirIN2psGIjom1afFg0BEqrMQCfMbySe22O5PIu-MW8Z2TKsmS4NZPo4mq-cp6WfgS9wyE6B07_-GF1fhQKylo1I5FQOceW5hTFM8e0p4ndC1KmcbS-uZbu5QOCWfX1DLUOWuhCD3wagd5iQmcDyxcyMdi1HfFNyQ6K2a0zC0QFYjhm5sOAnObmb8uWyE-A_Szv3oka9MtxPkVF0pf6jFJThYRET1w0lvxJMx1RZeOT3VEKj2QXQ0_lbiIAJW5L9DxQxro4tCZJHqLC6QZ7LJ1CohlXoB7EUNpSz8oOBiIKqwFTMXO0vduwpCJvhE5pBTlXvgICGCFyjFHF66ZFn9ZRX1jyriUQGS3a48iwmIoK2hJUFxkBvW-6n66AvSxpwWTucwrIWZQIyE5NsSwNxeJIgUQ88W2Yz04oCD-XtuFACqC2cGaNvVx9iII-8VsUlrh61iwbgapF3Js8n-ubDtHE68RAYkiY4hjuxOvF9jXf-WUFV7XysoXwN9HkwiNJ8NvX8Vhjva5jxg5kvcTHL2q4SK58EMHOzsX9eUiIoaLW-yL35-xP_X9F9nY3ciux8nSBy1puofmiHvurtKGl0TLtSnsDmZI5Q8myOMfm2XiQ8E82PFySAZLQMe9Mdr2xbjoQk32baRsR8G5TCnck_35BYOtnhULhgs3y4bkZ4ZG4VU4x2ssX0aT_dbZ4Qd0cjQQ0e8-cuDZJLY73topjERegUk0M6ZdEtbUwB9KT0vKPIgIYzeQ0AdM45WjJR1q8sWL59zXOiQYjZ1Wy3OE8CAA","id_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlNTUWRoSTFjS3ZoUUVEU0p4RTJnR1lzNDBRMCIsImtpZCI6IlNTUWRoSTFjS3ZoUUVEU0p4RTJnR1lzNDBRMCJ9.eyJhdWQiOiIyY2NjOTQyOS04ZmQ1LTRkYWYtOTI3NS00ZWY2MjVjOTg5YjciLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9hY2ViZjgzMS1kZTkyLTQ5YTMtOWIyNC05ZDE0NTgyYTBiM2UvIiwiaWF0IjoxNTIwMDI3MjA2LCJuYmYiOjE1MjAwMjcyMDYsImV4cCI6MTUyMDAzMTEwNiwiYWlvIjoiWTJOZ1lDaDdlb05sWG5DRHlnYWxmNitpQk9aWXRMK1JlT2N1SGwyVTZyWGd6NG1WN2lVQSIsImFtciI6WyJwd2QiXSwiZmFtaWx5X25hbWUiOiJBdXN0aW4iLCJnaXZlbl9uYW1lIjoiSm9obiIsImlwYWRkciI6IjE2Ny4yMjAuMS4xNTQiLCJuYW1lIjoiSm9obiBBdXN0aW4iLCJvaWQiOiIxMGUxODg0Yy03MzUyLTRkZWEtYTJjMC00ZGU0ODQwMjJlYWUiLCJzdWIiOiJneWR2LTlnWk9iTFo4LTRvRHcwdVpZckdsZVZlbVJlTm01d24tSkxpckJJIiwidGlkIjoiYWNlYmY4MzEtZGU5Mi00OWEzLTliMjQtOWQxNDU4MmEwYjNlIiwidW5pcXVlX25hbWUiOiJKb2huQXVzdGluQE9mZmljZVNhbmRib3gzNjUub25taWNyb3NvZnQuY29tIiwidXBuIjoiSm9obkF1c3RpbkBPZmZpY2VTYW5kYm94MzY1Lm9ubWljcm9zb2Z0LmNvbSIsInV0aSI6InQ5UkxQV0hKZkVtMmo5WEd6aFVCQUEiLCJ2ZXIiOiIxLjAifQ.m3ryjkQSaE70SC631vZiaymcDd7q8LivvJvwGfbGRxoEM4zYbGrV_xr6BFBjZqpoRm7AATLHEdz9Ve0CjHmLpFF4KWQfXGR4lM7XMHE31wJulq6VDk4UnRcRv-oFQeIVyt46PzeOEzorjvBjVjWNw03vInJyB9_z7B-evxvHJwVoGOSEZrRYjqqr8vWaqAvlRkjnDZmnafeGlEjjPcf94N9bE_j5QG2iiA43ow1wzaIZw3yPd5NI9w3N3UH6m2wsVqiLJujUAukRdNcPhwnkMpitiuO-XUxQYuzP6phb-M18UC8Mej0yq9wtpUc6T2R4xdQzfSIn5ZX5EVlEDr-glA"}')
+
+Now we're going to access a protected resource...
+Got it! Let's see what we found...
+
+200
+{"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#users/$entity","id":"10e1884c-7352-4dea-a2c0-4de484022eae","businessPhones":["253 579-4748"],"displayName":"John Austin","givenName":"John","jobTitle":null,"mail":"JohnAustin@OfficeSandbox365.onmicrosoft.com","mobilePhone":"+1 253 579-4748","officeLocation":null,"preferredLanguage":"en-US","surname":"Austin","userPrincipalName":"JohnAustin@OfficeSandbox365.onmicrosoft.com"}
+
+Thats it! Go and build something awesome with Microsoft Graph! :)
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Created DefaultLogger
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Using provided auth provider GraphServiceClientManager
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger setLoggingLevel
+INFO: Setting logging level to ERROR
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Created DefaultExecutors
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Created DefaultSerializer
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Created DefaultHttpProvider
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Starting to send request, URL https://graph.microsoft.com/v1.0/me
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Request Method GET
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response code 200, OK
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response json
+Mar 02, 2018 1:51:46 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Deserializing type User
+Hello, John Austin. Would you like to send an email to yourself or someone else?
+Enter the address to which you'd like to send a message. If you enter nothing, the message will go to your address
+Mar 02, 2018 1:51:49 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Starting to send request, URL https://graph.microsoft.com/v1.0/me/photo/$value
+Mar 02, 2018 1:51:49 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Request Method GET
+Mar 02, 2018 1:51:49 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response code 200, OK
+Mar 02, 2018 1:51:49 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response binary
+Mar 02, 2018 1:51:49 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Starting to send request, URL https://graph.microsoft.com/v1.0/me/drive/root:/me2.png:/content
+Mar 02, 2018 1:51:49 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Request Method PUT
+Mar 02, 2018 1:51:49 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Sending byte[] as request body
+Mar 02, 2018 1:51:50 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response code 200, OK
+Mar 02, 2018 1:51:50 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response json
+Mar 02, 2018 1:51:50 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Deserializing type DriveItem
+Mar 02, 2018 1:51:50 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Starting to send request, URL https://graph.microsoft.com/v1.0/me/drive/items/01EQ34WTNEONHTQUAAWFFLOQVOZUEJQE2C/microsoft.graph.createLink
+Mar 02, 2018 1:51:50 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Request Method POST
+Mar 02, 2018 1:51:50 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Sending com.microsoft.graph.models.extensions.DriveItemCreateLinkBody as request body
+Mar 02, 2018 1:51:50 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Serializing type DriveItemCreateLinkBody
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response code 201, Created
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response json
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Deserializing type Permission
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Starting to send request, URL https://graph.microsoft.com/v1.0/me/messages
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Request Method POST
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Sending com.microsoft.graph.models.extensions.Message as request body
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Serializing type Message
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response code 201, Created
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response json
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Deserializing type Message
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Starting to send request, URL https://graph.microsoft.com/v1.0/me/messages/AQMkAGFiMmViMzU2LWExOGEtNGY2YS04MzkzLTE4YTlmNTNkYWEAMWEARgAAA6Rab21vU6xDt5I_G5um6EYHABUsriz4zOpLoeCGQBXajO4AAAMRAAAAFSyuLPjM6kuh4IZAFdqM7gAEeUD33AAAAA==
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Request Method GET
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response code 200, OK
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response json
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Deserializing type Message
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Starting to send request, URL https://graph.microsoft.com/v1.0/me/messages/AQMkAGFiMmViMzU2LWExOGEtNGY2YS04MzkzLTE4YTlmNTNkYWEAMWEARgAAA6Rab21vU6xDt5I_G5um6EYHABUsriz4zOpLoeCGQBXajO4AAAMRAAAAFSyuLPjM6kuh4IZAFdqM7gAEeUD33AAAAA==/attachments
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Request Method POST
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Sending com.microsoft.graph.models.extensions.FileAttachment as request body
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Serializing type FileAttachment
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response code 201, Created
+Mar 02, 2018 1:51:51 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response json
+Mar 02, 2018 1:51:52 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Deserializing type Attachment
+Mar 02, 2018 1:51:52 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Starting to send request, URL https://graph.microsoft.com/v1.0/me/mailFolders/Drafts/messages/AQMkAGFiMmViMzU2LWExOGEtNGY2YS04MzkzLTE4YTlmNTNkYWEAMWEARgAAA6Rab21vU6xDt5I_G5um6EYHABUsriz4zOpLoeCGQBXajO4AAAMRAAAAFSyuLPjM6kuh4IZAFdqM7gAEeUD33AAAAA==/microsoft.graph.send
+Mar 02, 2018 1:51:52 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Request Method POST
+
+Email sent! 
+ Want to send another message? Type 'y' for yes and any other key to exit.
+Mar 02, 2018 1:51:52 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Response code 202, Accepted
+Mar 02, 2018 1:51:52 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Handling accepted response
+Mar 02, 2018 1:51:52 PM com.microsoft.graph.logger.DefaultLogger logDebug
+INFO: Deserializing a non-IJsonBackedObject type Void

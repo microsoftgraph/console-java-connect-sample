@@ -1,22 +1,56 @@
-# Compiled class file
-*.class
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
 
-# Log file
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!/.mvn/wrapper/maven-wrapper.jar
+## Eclipse
+.settings/
+.loadpath
+.metadata
+proguard/
+
+*.keystore
+*.orig
 *.log
+*.tmp
+*.bak
 
-# BlueJ files
-*.ctxt
+## Android Studio
+*.apk
+*.ap_
+*.dex
+*.class
+*.iws
+*.ipr
+*.iml
+*~
+*.swp
+.idea/
+local.properties
+out/
+build/
+production/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+## Gradle
+.gradle/
 
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# generated files
+**/build/
+bin/
+gen/
+target/
+gen-external-apklibs/
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# Intellj
+.settings/
+.libraries/
+
+# VSCode
+.vscode/
