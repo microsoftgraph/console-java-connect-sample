@@ -74,10 +74,28 @@ This will generate a `Java-Native-Console-Connect.jar` file in your /out directo
 * `$ java -jar Java-Native-Console-Connect.jar`
 
 
-### You're done!
+### Running the sample
 
-Your command line interface should prompt you for the username and password and then access the Graph API to retreive your user information.
+The command line interface opens a browser window on the Azure Active Directory authorization endpoint. Enter your
+user name and password to authenticate. When you are authenticated, you're taken to an authorization window for the sample
+app. Review and accept the scopes requested by the sample app. Click the Ok button on the authorization window. The browser navigates
+to `http://localhost`. Copy the full redirect URL address and paste it into a text editor.  It should look like the following url:
 
+```
+http://localhost/?code={IAQABAAIAAABHh4kmS_aKT5XrjzxRAtHz5S...p7OoAFPmGPqIq-1_bMCAA}&session_state=dd64ce71-4424-494b-8818-be9a99ca0798
+```
+> **Note:** URL example is truncated for clarity. `{` and `}` were added to the example to delimit the access token for illustration purposes.
+
+The access token starts after `?code=` and ends before `&session_state`.
+
+Copy the access token to the system clipboard and paste it into the console under `And paste the authorization code here`.
+
+You are prompted with `Hello, {your name}. Would you like to send an email to yourself or someone else?
+                       Enter the address to which you'd like to send a message. If you enter nothing, the message will go to your address`
+
+After you enter an email address or leave the prompt blank, an email is sent to you or the address you type into the console.
+
+You can send email to other addresses by repsonding with a "y" to the prompt `Want to send another message? Type 'y' for yes and any other key to exit.`
 ### Acknowledgements
 
 We would like to acknowledge the folks who own/contribute to the following projects for their support of Azure Active Directory and their libraries that were used to build this sample. In places where we forked these libraries to add additional functionality, we ensured that the chain of forking remains intact so you can navigate back to the original package. Working with such great partners in the open source community clearly illustrates what open collaboration can accomplish. Thank you!
