@@ -107,9 +107,9 @@ public class AuthenticationManager {
 
     /**
         This method implements the Authorization Grant flow for OAuth 2.0
-        A user is required to respond to the credentials challenge presented in the
-        browser window that is opened by this method. User presents credentials and the browser
-        window is redirected to an authorization page. User accepts permission requiests and an
+        A user responds to the credentials challenge in the browser opened by this method. User
+        types their credentials in the browser window and is redirected to an authorization page.
+        User accepts the sample app's requests to access Microsoft Graph resources and an
         authorization token is returned to the callback url.
         In a breakpoint before the service.getAccessToken call, update the authorizationCode string variable
         with the authorization code from the POST to the callback url.
@@ -206,8 +206,8 @@ public class AuthenticationManager {
     }
 
     /**
-     * Creates and runs REST authenticated request for Me resource synchronously. Response contains authentication token
-     * that is used in subsequent Microsoft Graph API calls
+     * Creates and runs REST authenticated request for Me resource synchronously. The response includes a
+     * JSON payload with a representation of the me resource.
      *
      * @throws InterruptedException
      * @throws ExecutionException
@@ -230,6 +230,10 @@ public class AuthenticationManager {
      * Gets the user authorization grant flow URL, opens a browser tab with the resulting authorization token
      * embedded in the address URL. User copies the URL, extracts the token, and pastes it into the system console.
      * The Scanner reads the authorization code from the system console and returns the value to calling code.
+     *
+     * The authorization code is returned when the user accepts the sample app's requests to access Microsoft Graph
+     * resources. The authorization code lists the Microsoft Graph resources that the user has given the sample
+     * app permission to access.
      *
      * @return Authorization code
      * @throws IOException

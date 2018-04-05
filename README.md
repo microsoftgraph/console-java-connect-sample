@@ -4,12 +4,13 @@ platforms: java
 author: austin
 ---
 
-# Integrating the Microsoft Graph API into a Java command line using username and password
+# Integrate the Microsoft Graph API into a Java command line app using username and password
 
-This sample demonstrates a command line application calling the Microsoft Graph API that is secured using Azure AD. 
-The Java application uses the [ScribeJava Authentication Library](https://github.com/scribejava/scribejava)  to obtain a JWT access token through the OAuth 2.0 protocol. 
-The access token is sent to the Microsoft Graph API to authenticate the user and get access to the service. 
-This sample shows you how to use **ScribeJava** to authenticate users via raw credentials (username and password) 
+This sample shows a command line app that calls the Azure AD-secured Microsoft Graph API.
+The Java application uses the [ScribeJava Authentication Library](https://github.com/scribejava/scribejava) to obtain a
+base 64 encoded JSON Web Token (JWT) through the OAuth 2.0 protocol. The returned JWT is known as an **access token**.
+The access token is added to all requests on the Microsoft Graph API as an HTTP header. It authenticates the user and gets access to the service.
+This sample shows you how to use **ScribeJava** to authenticate users via simple credentials (username and password)
 using a text-only interface.
 
 
@@ -19,11 +20,11 @@ Getting started with the sample is easy. It is configured to run out of the box 
 
 ### Step 1: Register an Azure AD Tenant
 
-To use this sample you will need a Azure Active Directory Tenant. If you're not sure what a tenant is or how you would get one, read [What is an Azure AD tenant](http://technet.microsoft.com/library/jj573650.aspx)? or [Sign up for Azure as an organization](http://azure.microsoft.com/documentation/articles/sign-up-organization/). These docs should get you started on your way to using Azure AD.
+To use this sample you need a Azure Active Directory Tenant. If you're not sure what a tenant is or how you would get one, read [What is an Azure AD tenant](http://technet.microsoft.com/library/jj573650.aspx)? or [Sign up for Azure as an organization](http://azure.microsoft.com/documentation/articles/sign-up-organization/). These docs should get you started on your way to using Azure AD.
 
 ### Step 2: Download Java (7 and above) for your platform 
 
-To successfully use this sample, you need a working installation of [Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and [Maven](https://maven.apache.org).
+To use this sample, you need a working installation of [Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and [Maven](https://maven.apache.org).
 
 ### Step 3: Download the Sample application and modules
 
@@ -32,46 +33,45 @@ Next, clone the sample repo and install the project's dependencies.
 From your shell or command line:
 
 * `$ git@github.com:microsoftgraph/console-java-connect-sample.git`
-* `$ cd Java-Native-Console-Connect`
+* `$ cd console-java-connect-sample`
 
-### Step 4: Register the GraphClient app
+### Step 4: Register the Console Java Connect app
 
 
 1. Sign in to the [Application Registration portal](https://apps.dev.microsoft.com).
 3. Click on the blue **Add an app** button on the right side of the page.
 4. Give your application a name.
 4. _Un_-check **Let us help you get started** under the **Guided Setup** section
-4. Click on the blue **Generate new password** under the **Application Secrets** section
-4. Copy the generated password from the **New password generated** dialog to the system clipboard
-4. Paste the password **.\Java-Native-Console-Connect\src\main\java\PublicClient.java**, line 17 to replace `ENTER_YOUR_CLIENT_SECRET`.
-5. Click the **Add Platform** button under the **Platforms** section
-6. While still in the Azure portal, choose your application, click on **Settings** and choose **Properties**.
-7. Find the Application ID value and copy it to the clipboard.
-8. Configure Permissions for your application - in the Settings menu, choose the 'Required permissions' section, click on **Add**, then **Select an API**, and select 'Microsoft Graph' (this is the Graph API). Then, click on  **Select Permissions** and select 'Sign in and read user profile'.
+4. Copy the **Application Id** of the new app registration to the clipboard
+5. Click the **Add Platform** button under the **Platforms** section and an **Add Platform** window opens.
+6. Choose **Native Application** in the Add Platform window.
 
-### Step 5: Configure your web app using `PublicClient.java`
+> **Note:** The Azure Active Directory v2.0 authorization endpoint uses [incremental and dynamic consent](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-compare#incremental-and-dynamic-consent)
+> which means that you don't need to set permissions (now called **scopes**) when you register your application. Scopes are requested by the
+> your app at run-time.
 
-Enter the client id value above at the top of the `PublicClient.java` file.
+### Step 5: Configure your web app using `Constants.java`
+
+Paste the Application Id from the clipboard into **com/microsoft/graphsample/connect/Constants.java**, line 11 to replace `ENTER_YOUR_CLIENT_ID`.
 
 ```java
-public class PublicClient {
+public class Constants {
 
-    private final static String AUTHORITY = "https://login.microsoftonline.com/common/";
-    private final static String CLIENT_ID = "<your client id>";
+    public final static String CLIENT_ID = "ENTER_YOUR_CLIENT_ID";
 
 //...
 }
 ```
 
-### Step 6: Package and then run the `public-client-adal4j-sample-jar-with-dependencies.jar ` file.
+### Step 6: Package and then run the `Java-Native-Console-Connect.jar ` file.
 
 From your shell or command line:
 
 * `$ mvn package`
 
-This will generate a `public-client-adal4j-sample-jar-with-dependencies.jar` file in your /targets directory. Run this using your Java executable like below:
+This will generate a `Java-Native-Console-Connect.jar` file in your /out directory. Run this using your Java executable like below:
 
-* `$ java -jar public-client-adal4j-sample-jar-with-dependencies.jar`
+* `$ java -jar Java-Native-Console-Connect.jar`
 
 
 ### You're done!
