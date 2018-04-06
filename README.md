@@ -20,7 +20,12 @@ Getting started with the sample is easy. It is configured to run out of the box 
 
 ### Step 1: Register an Azure AD Tenant
 
-To use this sample you need a Azure Active Directory Tenant. If you're not sure what a tenant is or how you would get one, read [What is an Azure AD tenant](http://technet.microsoft.com/library/jj573650.aspx)? or [Sign up for Azure as an organization](http://azure.microsoft.com/documentation/articles/sign-up-organization/). These docs should get you started on your way to using Azure AD.
+To use this sample you need a Azure Active Directory Tenant. If you're not sure what a tenant
+is or how you would get one, read [What is an Azure AD tenant](http://technet.microsoft.com/library/jj573650.aspx)? or [Sign up for Azure as an organization](http://azure.microsoft.com/documentation/articles/sign-up-organization/). These docs should get you started on your way to using Azure AD.
+
+The sample was built using the Gradle plugin for IntelliJ IDEA IDE. The project build.gradle file is configured
+to let you run the sample from within IntelliJ. The run build configuration lets you run or debug the sample.
+
 
 ### Step 2: Download Java (7 and above) for your platform 
 
