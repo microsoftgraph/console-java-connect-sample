@@ -13,7 +13,6 @@ The access token is added to all requests on the Microsoft Graph API as an HTTP 
 This sample shows you how to use **ScribeJava** to authenticate users via simple credentials (username and password)
 using a text-only interface.
 
-
 ## Quick Start
 
 Getting started with the sample is easy. It is configured to run out of the box with minimal setup.
@@ -101,6 +100,7 @@ You are prompted with `Hello, {your name}. Would you like to send an email to yo
 After you enter an email address or leave the prompt blank, an email is sent to you or the address you type into the console.
 
 You can send email to other addresses by repsonding with a "y" to the prompt `Want to send another message? Type 'y' for yes and any other key to exit.`
+
 ### Acknowledgements
 
 We would like to acknowledge the folks who own/contribute to the following projects for their support of Azure Active Directory and their libraries that were used to build this sample. In places where we forked these libraries to add additional functionality, we ensured that the chain of forking remains intact so you can navigate back to the original package. Working with such great partners in the open source community clearly illustrates what open collaboration can accomplish. Thank you!
