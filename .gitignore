@@ -40,6 +40,7 @@ production/
 
 ## Gradle
 .gradle/
+gradle/
 
 # generated files
 **/build/

@@ -67,11 +67,11 @@ public class Constants {
 
 From your shell or command line:
 
-* `$ mvn package`
+* `$ gradle build --build-file build.gradle`
 
-This will generate a `Java-Native-Console-Connect.jar` file in your /out directory. Run this using your Java executable like below:
+This will generate a `console-java-connect-sample-1.0-SNAPSHOT.jar` file in your /build/libs directory. Run this using your Java executable like below:
 
-* `$ java -jar Java-Native-Console-Connect.jar`
+* `$ java -jar console-java-connect-sample-1.0-SNAPSHOT.jar`
 
 
 ### Running the sample

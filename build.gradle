@@ -3,8 +3,6 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
-
-
 repositories {
 
     maven { url "http://repo.maven.apache.org/maven2" }
@@ -19,6 +17,15 @@ dependencies {
     compile group: 'com.gilecode.yagson', name: 'j9-reflection-utils', version:'1.0'
     compile group: 'com.microsoft.graph', name: 'microsoft-graph', version: '0.2.0'
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version:'3.0.1'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.microsoft.graphsample.connect.PublicClient.main'
+        )
+    }
 }
 
 task run(type: JavaExec, dependsOn: classes) {
