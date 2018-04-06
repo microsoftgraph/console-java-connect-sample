@@ -78,10 +78,7 @@ public class GraphServiceClientManager implements IAuthenticationProvider {
                     authenticationProvider
             );
             clientConfig.getLogger().setLoggingLevel(LoggerLevel.ERROR);
-            mGraphServiceClient = GraphServiceClient.builder()
-                                                    .fromConfig(clientConfig)
-                                                    .logger(null)
-                                                    .buildClient();
+            mGraphServiceClient = GraphServiceClient.fromConfig(clientConfig);
         }
 
         return mGraphServiceClient;

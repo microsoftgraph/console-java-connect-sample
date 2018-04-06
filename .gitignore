@@ -46,6 +46,7 @@ production/
 bin/
 gen/
 target/
+out/
 gen-external-apklibs/
 
 # Intellj
