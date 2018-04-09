@@ -55,9 +55,10 @@ From your shell or command line:
 > which means that you don't need to set permissions (now called **scopes**) when you register your application. Scopes are requested by the
 > your app at run-time.
 
-### Step 5: Configure your web app using `Constants.java`
+### Step 5: Configure your app using `Constants.java`
 
-Paste the Application Id from the clipboard into **com/microsoft/graphsample/connect/Constants.java**, line 11 to replace `ENTER_YOUR_CLIENT_ID`.
+Using your favorite code editor, open **..\console-java-connect-sample\src\main\java\com\microsoft\graphsample\connect\Constants.java**
+Paste the Application Id from the clipboard into Constants.java, line 11 to replace `ENTER_YOUR_CLIENT_ID`.
 
 ```java
 public class Constants {
@@ -67,12 +68,20 @@ public class Constants {
 //...
 }
 ```
+### Step 6: Install Gradle
+If you do not have the Gradle build system installed, [install Gradle](https://docs.gradle.org/4.6/userguide/installation.html)
 
-### Step 6: Build and run the sample.
+### Step 7: Add the Gradle wrapper to the project
 
 From your shell or command line at the project root:
 
-* `$  ./gradlew run`
+* `$ gradle wrapper`
+
+### Step 8: Build and run the sample.
+
+From your shell or command line at the project root:
+
+* `$ gradle run`
 
 This will run the sample.
 
