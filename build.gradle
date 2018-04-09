@@ -23,13 +23,13 @@ jar {
     manifest {
         attributes(
                 'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-                'Main-Class': 'com.microsoft.graphsample.connect.PublicClient.main'
+                'Main-Class': 'com.microsoft.graphsample.PublicClient.main'
         )
     }
 }
 
 task run(type: JavaExec, dependsOn: classes) {
     standardInput = System.in
-    main = 'com.microsoft.graphsample.connect.PublicClient'
+    main = 'com.microsoft.graphsample.PublicClient'
     classpath = sourceSets.main.runtimeClasspath
 }

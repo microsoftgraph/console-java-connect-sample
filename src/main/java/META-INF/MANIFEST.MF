@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: com.microsoft.graphsample.connect.PublicClient
+Class-Path: com.microsoft.graphsample
+Main-Class: com.microsoft.graphsample.PublicClient
 

@@ -68,15 +68,13 @@ public class Constants {
 }
 ```
 
-### Step 6: Package and then run the `Java-Native-Console-Connect.jar ` file.
+### Step 6: Build and run the sample.
 
-From your shell or command line:
+From your shell or command line at the project root:
 
-* `$ gradle build --build-file build.gradle`
+* `$  ./gradlew run`
 
-This will generate a `console-java-connect-sample-1.0-SNAPSHOT.jar` file in your /build/libs directory. Run this using your Java executable like below:
-
-* `$ java -jar console-java-connect-sample-1.0-SNAPSHOT.jar`
+This will run the sample.
 
 
 ### Running the sample

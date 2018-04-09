@@ -10,6 +10,7 @@ import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.*;
 import com.github.scribejava.core.oauth.OAuth20Service;
 import com.microsoft.graph.logger.LoggerLevel;
+import com.microsoft.graphsample.PublicClient;
 
 import java.io.*;
 import java.net.URI;

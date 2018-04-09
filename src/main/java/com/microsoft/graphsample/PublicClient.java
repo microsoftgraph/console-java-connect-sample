@@ -1,13 +1,16 @@
-package com.microsoft.graphsample.connect;
+package com.microsoft.graphsample;
 
 import com.gilecode.reflection.ReflectionAccessUtils;
 import com.microsoft.graph.models.extensions.User;
+import com.microsoft.graphsample.connect.AuthenticationManager;
+import com.microsoft.graphsample.connect.DebugLogger;
 import com.microsoft.graphsample.msgraph.GraphSendMail;
 import com.microsoft.graphsample.msgraph.SendMailException;
 
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PublicClient {
     protected static AuthenticationManager authenticationManager = null;
@@ -21,6 +24,9 @@ public class PublicClient {
         try {
             PublicClient publicClient = new PublicClient();
             publicClient.startConnect();
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+
         } finally {
         }
     }
