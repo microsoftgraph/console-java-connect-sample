@@ -27,6 +27,7 @@ is or how you would get one, read [What is an Azure AD tenant](http://technet.mi
 
 To use this sample, you need a working installation of [Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and [Gradle](https://gradle.org/).
 
+
 The sample was built using the Gradle plugin for IntelliJ IDEA IDE. The project build.gradle file is configured
 to let you run the sample from within IntelliJ. The run build configuration lets you run or debug the sample.
 
@@ -56,6 +57,7 @@ From your shell or command line:
 > your app at run-time.
 
 <a name="configure-your-app"/>
+
 ### Step 5: Configure your app using Constants.java
 
 Using your favorite code editor, open **..\console-java-connect-sample\src\main\java\com\microsoft\graphsample\connect\Constants.java**
