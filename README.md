@@ -55,7 +55,8 @@ From your shell or command line:
 > which means that you don't need to set permissions (now called **scopes**) when you register your application. Scopes are requested by the
 > your app at run-time.
 
-### Configure your app using Constants.java
+<a name="configure-your-app"/>
+### Step 5: Configure your app using Constants.java
 
 Using your favorite code editor, open **..\console-java-connect-sample\src\main\java\com\microsoft\graphsample\connect\Constants.java**
 Paste the Application Id from the clipboard into Constants.java, line 11 to replace `ENTER_YOUR_CLIENT_ID`.
