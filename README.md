@@ -41,6 +41,8 @@ From your shell or command line:
 * `$ git@github.com:microsoftgraph/console-java-connect-sample.git`
 * `$ cd console-java-connect-sample`
 
+<a name="register-your-app"/>
+
 ### Step 4: Register the Console Java Connect app
 
 
