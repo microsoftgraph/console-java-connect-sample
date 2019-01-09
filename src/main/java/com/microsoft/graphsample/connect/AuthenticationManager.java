@@ -5,7 +5,6 @@
 package com.microsoft.graphsample.connect;
 
 
-import com.github.scribejava.apis.MicrosoftAzureActiveDirectoryApi;
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.*;
 import com.github.scribejava.core.oauth.OAuth20Service;
@@ -44,7 +43,7 @@ public class AuthenticationManager {
                      .apiKey(Constants.CLIENT_ID)
                      .debugStream(System.out)
                      .debug()
-                     .build(MicrosoftAzureActiveDirectoryApi.instance())
+                     .build(MicrosoftAzureAD20Api.instance())
              ) {
                  mOAuthService = service;
              } catch (java.io.IOException | IllegalArgumentException ex) {
@@ -60,7 +59,7 @@ public class AuthenticationManager {
                      .callback(Constants.REDIRECT_URL)
                      .scope(Constants.SCOPES)
                      .apiKey(Constants.CLIENT_ID)
-                     .build(MicrosoftAzureActiveDirectoryApi.instance())
+                     .build(MicrosoftAzureAD20Api.instance())
              ) {
                  mOAuthService = service;
              } catch (java.io.IOException | IllegalArgumentException ex) {
