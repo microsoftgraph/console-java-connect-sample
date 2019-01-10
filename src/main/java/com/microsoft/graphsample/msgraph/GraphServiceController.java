@@ -52,12 +52,11 @@ class GraphServiceController {
                     .messages()
                     .buildRequest()
                     .post(message);
-
         } catch (Exception ex) {
             throw new SendMailException("exception on send mail", ex);
-        } finally {
-            return message;
         }
+
+        return message;
     }
 
 
@@ -134,12 +133,11 @@ class GraphServiceController {
                     .attachments()
                     .buildRequest()
                     .post(fileAttachment);
-
         } catch (Exception ex) {
             throw new SendMailException("Exception on add picture to draft message", ex);
-        } finally {
-            return attachment;
         }
+
+        return attachment;
     }
 
     /**
@@ -192,19 +190,18 @@ class GraphServiceController {
      *
      * @param messageId
      */
-    public Message getDraftMessage(String messageId) {
+    public Message getDraftMessage(String messageId) throws SendMailException {
         Message draftMessage = null;
         try {
             draftMessage = mGraphServiceClient.me()
                                               .messages(messageId)
                                               .buildRequest()
                                               .get();
-
         } catch (Exception ex) {
-            DebugLogger.getInstance().writeLog(Level.SEVERE, "exception on get draft message ", ex);
-        } finally {
-            return draftMessage;
+            throw new SendMailException("exception on get draft message ", ex);
         }
+
+        return draftMessage;
     }
 
 
@@ -223,9 +220,9 @@ class GraphServiceController {
                     .get();
         } catch (Exception ex) {
             throw new SendMailException("Exception on get me", ex);
-        } finally {
-            return user;
         }
+
+        return user;
     }
 
     /**
@@ -250,12 +247,15 @@ class GraphServiceController {
             }
             else {
                 pictureBytes = inputStreamToByteArray(photoStream);
+                if (pictureBytes.length <= 0) {
+                    pictureBytes = getDefaultPicture();
+                }
             }
         } catch (Exception ex) {
             throw new SendMailException("Exception on get user profile photo", ex);
-        } finally {
-            return pictureBytes;
         }
+
+        return pictureBytes;
     }
 
 
@@ -266,7 +266,7 @@ class GraphServiceController {
      * @param inputStream
      * @return
      */
-    private byte[] inputStreamToByteArray(InputStream inputStream) {
+    private byte[] inputStreamToByteArray(InputStream inputStream) throws IOException {
         byte[] pictureBytes = null;
         try {
             BufferedInputStream bufferedInputStream = (BufferedInputStream) inputStream;
@@ -282,24 +282,14 @@ class GraphServiceController {
             }
             pictureBytes = bao.toByteArray();
 
-
-            //If the user's photo is not available, get the default test.jpg from the device external
-            //storage root folder
-            // if (bufferedInputStream.available() < 1) {
-            if (pictureBytes.length == 0) {
-                pictureBytes = getDefaultPicture();
-            }
-
-
+            bao.close();
         } catch (IOException ex) {
             DebugLogger.getInstance().writeLog(Level.SEVERE,
                                                "Attempting to read buffered network resource",
                                                ex);
-
-        } finally {
-            return pictureBytes;
         }
 
+        return pictureBytes;
     }
 
     /**
@@ -321,9 +311,9 @@ class GraphServiceController {
                     .put(picture);
         } catch (Exception ex) {
             throw new SendMailException("exception on upload picture to OneDrive ", ex);
-        } finally {
-            return driveItem;
         }
+
+        return driveItem;
     }
 
     /**
@@ -346,9 +336,9 @@ class GraphServiceController {
                     .post();
         } catch (Exception ex) {
             throw new SendMailException("exception on get OneDrive sharing link ", ex);
-        } finally {
-            return permission;
         }
+
+        return permission;
     }
 
     /**
@@ -381,34 +371,6 @@ class GraphServiceController {
         return bytes;
     }
 
-
-    /**
-     * Converts a BufferedInputStream to a byte array
-     *
-     * @param inputStream
-     * @param bufferLength
-     * @return
-     * @throws IOException
-     */
-    private byte[] convertBufferToBytes(BufferedInputStream inputStream, int bufferLength) throws IOException, SendMailException{
-        if (inputStream == null) { return null; }
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        byte[]                buffer       = new byte[bufferLength];
-        int n = 0;
-        try {
-            while ((n = inputStream.read(buffer, 0, bufferLength)) >= 0) {
-                outputStream.write(buffer, 0, n);
-            }
-            DebugLogger.getInstance().writeLog(Level.INFO, "bytes read from picture input stream " + String.valueOf(n));
-            inputStream.close();
-        } catch (IOException e) {
-            throw new SendMailException("Could not open default picture file", e);
-
-        } finally {
-            outputStream.close();
-        }
-        return outputStream.toByteArray();
-    }
 
     @VisibleForTesting
 
