@@ -9,7 +9,6 @@ import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.*;
 import com.github.scribejava.core.oauth.OAuth20Service;
 import com.microsoft.graph.logger.LoggerLevel;
-import com.microsoft.graphsample.PublicClient;
 
 import java.io.*;
 import java.net.URI;
@@ -17,6 +16,7 @@ import java.net.URISyntaxException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
+import java.util.Scanner;
 
 import static java.awt.Desktop.getDesktop;
 import static java.awt.Desktop.isDesktopSupported;
@@ -121,9 +121,9 @@ public class AuthenticationManager {
 
      */
 
-    public void connect() throws URISyntaxException, IOException, InterruptedException, ExecutionException {
+    public void connect(Scanner inputScanner) throws URISyntaxException, IOException, InterruptedException, ExecutionException {
         try {
-            mAccessToken = mOAuthService.getAccessToken(getAuthorizationCode());
+            mAccessToken = mOAuthService.getAccessToken(getAuthorizationCode(inputScanner));
             showAuthTokenToUser();
             makeAuthenticatedMeRequest();
         } finally {
@@ -141,6 +141,7 @@ public class AuthenticationManager {
      * @throws ExecutionException
      */
     public Future<OAuth2AccessToken> connectAsync(
+            Scanner inputScanner,
             IConnectCallback callback) throws
             URISyntaxException,
             IOException,
@@ -149,7 +150,7 @@ public class AuthenticationManager {
     {
         Future<OAuth2AccessToken> future = null;
         try {
-            final String code = getAuthorizationCode();
+            final String code = getAuthorizationCode(inputScanner);
             future = mOAuthService
                     .getAccessToken(code, new OAuthAsyncRequestCallback<OAuth2AccessToken>() {
 
@@ -239,8 +240,7 @@ public class AuthenticationManager {
      * @throws IOException
      * @throws URISyntaxException
      */
-    private String getAuthorizationCode() throws IOException, URISyntaxException {
-        // final Scanner in = new Scanner(System.in, "UTF-8");
+    private String getAuthorizationCode(Scanner inputScanner) throws IOException, URISyntaxException {
         System.out.println("=== " + Constants.NETWORK_NAME + "'s OAuth Workflow ===");
         System.out.println();
         // Obtain the Authorization URL
@@ -255,8 +255,9 @@ public class AuthenticationManager {
             System.out.println(authorizationUrl);
         }
         String code = "";
+        System.out.println("And paste the authorization code here");
         try {
-            code = PublicClient.getUserInput("And paste the authorization code here");
+            code = inputScanner.nextLine();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -264,26 +265,5 @@ public class AuthenticationManager {
         // Trade the Request Token and Verfier for the Access Token
         System.out.println("Trading the Request Token for an Access Token...");
         return code;
-    }
-
-    /**
-     * Creates a new text file in the project root folder to hold system console output
-     *
-     * @return
-     */
-    private PrintStream makeFileOutputStream() {
-        PrintStream outputStream = null;
-        File        authLogFile;
-        try {
-            authLogFile = new File("Authlog.txt");
-            if (!authLogFile.exists()) {
-                authLogFile.createNewFile();
-            }
-            outputStream = new PrintStream("Authlog.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-        }
-        return outputStream;
     }
 }

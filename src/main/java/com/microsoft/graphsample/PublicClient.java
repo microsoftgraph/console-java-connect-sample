@@ -10,24 +10,26 @@ import com.microsoft.graphsample.msgraph.SendMailException;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class PublicClient {
     protected static AuthenticationManager authenticationManager = null;
     DebugLogger mLogger;
+    Scanner mScanner;
 
     public PublicClient() throws IOException {
         mLogger = DebugLogger.getInstance();
+        mScanner = new Scanner(System.in, "UTF-8");
     }
 
     public static void main(String args[]) throws Exception {
+        PublicClient publicClient = new PublicClient();
         try {
-            PublicClient publicClient = new PublicClient();
             publicClient.startConnect();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
 
         } finally {
+            publicClient.mScanner.close();
         }
     }
 
@@ -39,7 +41,7 @@ public class PublicClient {
         //in the Graph SDK
         ReflectionAccessUtils.suppressIllegalReflectiveAccessWarnings();
         authenticationManager = AuthenticationManager.getInstance();
-        authenticationManager.connect();
+        authenticationManager.connect(mScanner);
         startSendMail();
     }
 
@@ -62,14 +64,12 @@ public class PublicClient {
                 System.out.println(
                         "Hello, " + preferredName + ". Would you like to send an email to yourself or someone else?");
                 String sendMailAddress = "";
-                sendMailAddress = PublicClient
-                        .getUserInput("Enter the address to which you'd like to send a message. " +
+                sendMailAddress = getUserInput("Enter the address to which you'd like to send a message. " +
                                       "If you enter nothing, the message will go to your address");
                 sendMailAddress = sendMailAddress.isEmpty() ? meUser.mail : sendMailAddress;
                 graphSendMail.sendMail(sendMailAddress, preferredName);
 
-                String sendAnotherYN = PublicClient
-                        .getUserInput("\nEmail sent! \n Want to send another message? Type 'y' for yes and any other key to exit.");
+                String sendAnotherYN = getUserInput("\nEmail sent! \n Want to send another message? Type 'y' for yes and any other key to exit.");
                 if (sendAnotherYN.isEmpty()) {
                     sendAnotherMail = false;
                 }
@@ -99,14 +99,9 @@ public class PublicClient {
         }
     }
 
-    public static String getUserInput(String prompt) throws Exception {
-        Scanner in = new Scanner(System.in, "UTF-8");
-
+    public String getUserInput(String prompt) throws Exception {
         System.out.println(prompt);
-        final String code = in.nextLine();
+        final String code = mScanner.nextLine();
         return code;
-
     }
-
-
 }

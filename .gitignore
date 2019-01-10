@@ -56,3 +56,7 @@ gen-external-apklibs/
 
 # VSCode
 .vscode/
+
+# Eclipse files
+.classpath
+.project
