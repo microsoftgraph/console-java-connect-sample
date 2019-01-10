@@ -4,7 +4,6 @@
  */
 package com.microsoft.graphsample.connect;
 
-
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.*;
 import com.github.scribejava.core.oauth.OAuth20Service;
@@ -33,43 +32,44 @@ public class AuthenticationManager {
     /**
      * Initialization block. Runs before constructor to get a logger and start up the ScribeJava OAuth2
      * authentication service
-     */ {
-         if (Debug.DebugLevel == LoggerLevel.DEBUG) {
-             DebugLogger.getInstance().writeLog(Level.INFO, "AuthenticationManager initialization block called");
+     */
+    {
+        if (Debug.DebugLevel == LoggerLevel.DEBUG) {
+            DebugLogger.getInstance().writeLog(Level.INFO, "AuthenticationManager initialization block called");
 
-             try (OAuth20Service service = new ServiceBuilder(Constants.CLIENT_ID)
-                     .callback(Constants.REDIRECT_URL)
-                     .scope(Constants.SCOPES)
-                     .apiKey(Constants.CLIENT_ID)
-                     .debugStream(System.out)
-                     .debug()
-                     .build(MicrosoftAzureAD20Api.instance())
-             ) {
-                 mOAuthService = service;
-             } catch (java.io.IOException | IllegalArgumentException ex) {
-                 try {
-                     throw ex;
-                 } catch (IOException e) {
-                     e.printStackTrace();
-                 }
-             }
-         }
-         else {
-             try (OAuth20Service service = new ServiceBuilder(Constants.CLIENT_ID)
-                     .callback(Constants.REDIRECT_URL)
-                     .scope(Constants.SCOPES)
-                     .apiKey(Constants.CLIENT_ID)
-                     .build(MicrosoftAzureAD20Api.instance())
-             ) {
-                 mOAuthService = service;
-             } catch (java.io.IOException | IllegalArgumentException ex) {
-                 try {
-                     throw ex;
-                 } catch (IOException e) {
-                     e.printStackTrace();
-                 }
-             }
-         }
+            try (OAuth20Service service = new ServiceBuilder(Constants.CLIENT_ID)
+                    .callback(Constants.REDIRECT_URL)
+                    .scope(Constants.SCOPES)
+                    .apiKey(Constants.CLIENT_ID)
+                    .debugStream(System.out)
+                    .debug()
+                    .build(MicrosoftAzureAD20Api.instance())
+            ) {
+                mOAuthService = service;
+            } catch (java.io.IOException | IllegalArgumentException ex) {
+                try {
+                    throw ex;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        else {
+            try (OAuth20Service service = new ServiceBuilder(Constants.CLIENT_ID)
+                    .callback(Constants.REDIRECT_URL)
+                    .scope(Constants.SCOPES)
+                    .apiKey(Constants.CLIENT_ID)
+                    .build(MicrosoftAzureAD20Api.instance())
+            ) {
+                mOAuthService = service;
+            } catch (java.io.IOException | IllegalArgumentException ex) {
+                try {
+                    throw ex;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     private AuthenticationManager() throws IOException {

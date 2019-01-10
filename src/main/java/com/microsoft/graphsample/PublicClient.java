@@ -67,7 +67,7 @@ public class PublicClient {
                 sendMailAddress = getUserInput("Enter the address to which you'd like to send a message. " +
                                       "If you enter nothing, the message will go to your address");
                 sendMailAddress = sendMailAddress.isEmpty() ? meUser.mail : sendMailAddress;
-                graphSendMail.sendMail(sendMailAddress, preferredName);
+                graphSendMail.sendMail(sendMailAddress);
 
                 String sendAnotherYN = getUserInput("\nEmail sent! \n Want to send another message? Type 'y' for yes and any other key to exit.");
                 if (sendAnotherYN.isEmpty()) {

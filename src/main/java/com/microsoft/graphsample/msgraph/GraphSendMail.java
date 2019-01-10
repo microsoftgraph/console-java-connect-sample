@@ -21,7 +21,6 @@ import java.util.logging.Level;
 public class GraphSendMail {
     final private GraphServiceController mGraphServiceController;
     DebugLogger mLogger;
-    private String mPreferredName;
     private String mRecipientEmailAddress;
 
     public GraphSendMail() throws SendMailException {
@@ -51,9 +50,8 @@ public class GraphSendMail {
      * 7. Send the draft email
      */
 
-    public void sendMail(String sendAddress, String preferredName) {
+    public void sendMail(String sendAddress) {
         mRecipientEmailAddress = sendAddress;
-        mPreferredName = preferredName;
         byte[] photoBytes = null;
         try {
             //1. Get the signed in user's profile picture
@@ -77,14 +75,7 @@ public class GraphSendMail {
 
 
     public User getMeUser() throws SendMailException {
-        User user = null;
-        try {
-            user = mGraphServiceController.getUser();
-        } catch (SendMailException ex) {
-            throw ex;
-        } finally {
-            return user;
-        }
+        return mGraphServiceController.getUser();
     }
 
     /**
