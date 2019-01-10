@@ -12,10 +12,10 @@ dependencies {
     compile group: 'com.nimbusds', name: 'oauth2-oidc-sdk', version:'4.5'
     compile group: 'org.json', name: 'json', version:'20090211'
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version:'1.7.5'
-    compile group: 'com.github.scribejava', name: 'scribejava-apis', version:'5.2.0-java7again'
+    compile group: 'com.github.scribejava', name: 'scribejava-apis', version:'6.2.0'
     compile group: 'org.apache.commons', name: 'commons-io', version:'1.3.2'
     compile group: 'com.gilecode.yagson', name: 'j9-reflection-utils', version:'1.0'
-    compile group: 'com.microsoft.graph', name: 'microsoft-graph', version: '0.2.0'
+    compile group: 'com.microsoft.graph', name: 'microsoft-graph', version: '1.0.+'
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version:'3.0.1'
 }
 
