@@ -45,6 +45,8 @@ From your shell or command line:
 
 1. In the application's list of pages, select **Authentication**.
 
+1. Under **Redirect URIs** in the **Suggested Redirect URIs for public clients (mobile, desktop)** section, check the box next to **https://login.microsoftonline.com/common/oauth2/nativeclient**
+
 1. Under **Advanced Settings** enable the implicit grant flow by checking the **Access tokens** and **ID tokens** boxes
 
 8. Choose **Save**.
