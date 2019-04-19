@@ -47,8 +47,6 @@ From your shell or command line:
 
 1. Under **Redirect URIs** in the **Suggested Redirect URIs for public clients (mobile, desktop)** section, check the box next to **https://login.microsoftonline.com/common/oauth2/nativeclient**
 
-1. Under **Advanced Settings** enable the implicit grant flow by checking the **Access tokens** and **ID tokens** boxes
-
 8. Choose **Save**.
 
 > **Note:** The Azure Active Directory v2.0 authorization endpoint uses [incremental and dynamic consent](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-compare#incremental-and-dynamic-consent) which means that you don't need to set permissions (now called **scopes**) when you register your application. Scopes are requested by the your app at run-time.
