@@ -29,13 +29,25 @@ From your shell or command line:
 
 ### Step 4: Register the Console Java Connect app
 
-1. Sign in to the [Application Registration portal](https://apps.dev.microsoft.com).
-1. Click on the blue **Add an app** button on the right side of the page.
-1. Give your application a name.
-1. _Un_-check **Let us help you get started** under the **Guided Setup** section
-1. Copy the **Application Id** of the new app registration to the clipboard
-1. Click the **Add Platform** button under the **Platforms** section and an **Add Platform** window opens.
-1. Choose **Native Application** in the Add Platform window.
+1. Sign into [Azure Portal - App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) using either your personal or work or school account.
+
+2. Choose **New registration**.
+
+3. In the **Name** section, enter a meaningful application name that will be displayed to users of the app
+
+1. In the **Supported account types** section, select **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**  
+
+1. Select **Register** to create the application. 
+	
+   The application's Overview page shows the properties of your app.
+
+4. Copy the **Application (client) Id**. This is the unique identifier for your app. 
+
+1. In the application's list of pages, select **Authentication**.
+
+1. Under **Redirect URIs** in the **Suggested Redirect URIs for public clients (mobile, desktop)** section, check the box next to **https://login.microsoftonline.com/common/oauth2/nativeclient**
+
+8. Choose **Save**.
 
 > **Note:** The Azure Active Directory v2.0 authorization endpoint uses [incremental and dynamic consent](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-compare#incremental-and-dynamic-consent) which means that you don't need to set permissions (now called **scopes**) when you register your application. Scopes are requested by the your app at run-time.
 
