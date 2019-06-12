@@ -24,7 +24,7 @@ Next, clone the sample repository and install the project's dependencies.
 
 From your shell or command line:
 
-* `$ git@github.com:microsoftgraph/console-java-connect-sample.git`
+* `$ git clone git@github.com:microsoftgraph/console-java-connect-sample.git`
 * `$ cd console-java-connect-sample`
 
 ### Step 4: Register the Console Java Connect app
