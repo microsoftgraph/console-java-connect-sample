@@ -1,23 +1,3 @@
----
-page_type: sample
-products:
-- office-outlook
-- office-word
-- ms-graph
-languages:
-- java
-extensions:
-  contentType: samples
-  technologies:
-  - Microsoft Graph 
-  - Microsoft identity platform
-  services:
-  - Outlook
-  - Microsoft identity platform
-  platforms:
-  - Android
-  createdDate: 3/5/2018 10:29:43 AM
----
 # Integrate the Microsoft Graph API into a Java command line app using username and password
 
 This sample shows a command line app that calls the Azure AD-secured Microsoft Graph API. The app uses the [ScribeJava Authentication Library](https://github.com/scribejava/scribejava) to obtain a JSON Web Token (JWT) through the OAuth 2.0 protocol. The returned JWT is known as an **access token**. The access token is added to all requests on the Microsoft Graph API as an HTTP header. It authenticates the user and gets access to the service.
